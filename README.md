@@ -27,20 +27,29 @@ This project is a Python program that is used to load and query LLM's. It provid
 	    Run the following on Linux/Mac -> source llms/bin/activate
 
  3. **Get access to LLM's via Hugging Face:**
-		This is optional if you already have access to the listed LLMs.
+	
+	This is optional if you already have access to the listed LLMs.
+	
 	 - Go to https://huggingface.co/ and sign up
 	 - Go to https://huggingface.co/meta-llama/Llama-2-7b-chat-hf and request for access
 	 - Go to https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1 and request for access
-	 - Check your email for access status. It usually takes less than 10 minutes. 
+	 - Check your email for access status. It usually takes less than 10 minutes.
 
- - **Install Packages:**
+ 4. **Environment Variables:**
+
+	 - **Hugging Face Access Token** - This will be used to download the LLM's
+		- Copy the `.env.example` as `.env`
+		- Go to https://huggingface.co/settings/tokens/new and create a **Read** only token
+		- Copy the token into the `.env` file as `HF_TOKEN=hf_...` and save.
+
+ 5. **Install Packages:**
 
 	    pip install -r requirements.txt
 
- - **Start the server :**
+ 6. **Start the server :**
 
 	    docker-compose up --build
 
- - **Using the CLI (optional or testing the LLM):**
+ 7. **Using the CLI (optional or testing the LLM):**
 
 	    python localLLM.py   

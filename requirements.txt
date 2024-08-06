@@ -1,5 +1,5 @@
 transformers
-torch==2.4.0+cu121
+torch==2.4.0
 tqdm
 huggingface_hub
 numpy==1.26.4
@@ -7,3 +7,4 @@ accelerate
 bitsandbytes
 langchain
 langchain_community
+python-dotenv

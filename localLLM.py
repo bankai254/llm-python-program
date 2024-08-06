@@ -3,6 +3,13 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
+from os import environ
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+hf_access_token = environ["HF_TOKEN"]
 class LocalLLM:
     def __init__(self):
         self.model_name = None
@@ -33,7 +40,7 @@ class LocalLLM:
                 print("Invalid choice. Please try again.")
 
         print(f"Loading {self.model_name}...")
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, token=hf_access_token)
         self.model = AutoModelForCausalLM.from_pretrained(
             self.model_name, 
             torch_dtype=torch.float16, 
